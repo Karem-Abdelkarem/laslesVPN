@@ -1,0 +1,41 @@
+@use "variables" as var;
+@use "mixins";
+
+.header {
+  @include mixins.flex($justify: space-between);
+  margin-top: 5rem;
+
+  &__logoContent {
+    @include mixins.flex($justify: space-between, $gap: 0.612rem);
+  }
+
+  &__logoText {
+    @include mixins.font($weight: 500, $size: 2rem);
+
+    .vpn {
+      @include mixins.font($weight: 700, $size: 2rem);
+    }
+  }
+
+  &__links {
+    @include mixins.flex($justify: space-between, $gap: 4rem);
+  }
+
+  &__link {
+    text-decoration: none;
+    @include mixins.font($weight: 400);
+    color: var.$color-gray;
+  }
+}
+
+.headerBtns {
+  a {
+    text-decoration: none;
+  }
+
+  .signin {
+    @include mixins.font($weight: 500);
+    color: var.$color-black;
+    margin-right: 3rem;
+  }
+}

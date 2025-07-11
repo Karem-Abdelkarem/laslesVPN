@@ -1,0 +1,17 @@
+@use "variables" as var;
+@use "mixins";
+
+.container {
+  max-width: 114rem;
+  background-color: var.$color-white;
+  color: var.$color-black;
+  margin: 0 auto;
+}
+
+.secondary-btn {
+  @include mixins.font($weight: 500);
+  padding: 1.3rem 4.5rem;
+  color: var.$main-color;
+  border: 1px solid var.$main-color;
+  border-radius: 5rem;
+}

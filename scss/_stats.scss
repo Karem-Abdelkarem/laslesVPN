@@ -1,0 +1,43 @@
+@use "variables" as var;
+@use "mixins";
+
+.stats {
+  @include mixins.flex($justify: space-between);
+  border-radius: 1rem;
+  padding: 3.72rem 9.1rem;
+  box-shadow: var.$second-box-shadow;
+  margin-top: 10.3rem;
+
+  &__item {
+    @include mixins.flex($justify: normal, $gap: 3.6rem);
+    padding: 3.3rem 0;
+  }
+
+  &__item:nth-last-of-type(2) {
+    border-left: 0.2rem solid var.$color-offwhite;
+    border-right: 0.2rem solid var.$color-offwhite;
+    padding-left: 11.3rem;
+    padding-right: 13.45rem;
+  }
+
+  &__icon {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    background-color: var.$second-color;
+    @include mixins.flex;
+
+    i {
+      color: var.$main-color;
+    }
+  }
+
+  &__number {
+    @include mixins.font($weight: 700, $size: 2.5rem);
+  }
+
+  &__label {
+    @include mixins.font($weight: 400, $size: 2rem);
+    color: var.$color-gray;
+  }
+}

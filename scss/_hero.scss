@@ -1,0 +1,38 @@
+@use "variables";
+@use "mixins";
+
+.hero {
+  @include mixins.flex($justify: space-between, $gap: 4.7rem);
+  margin-top: 8.85rem;
+
+  &__content {
+    flex: 1;
+    min-width: 55.5rem;
+  }
+
+  &__title {
+    @include mixins.font($weight: 500, $size: 5rem);
+    line-height: 7rem;
+
+    .vpn {
+      @include mixins.font($weight: 700, $size: 5rem);
+    }
+  }
+
+  &__description {
+    @include mixins.font($weight: 400);
+    line-height: 30px;
+    color: #4f5665;
+    margin: 2rem 0 5rem;
+
+    .vpn {
+      @include mixins.font($weight: 500);
+    }
+  }
+
+  &__imageContent {
+    flex: 1;
+    min-width: 612px;
+    max-width: 100%;
+  }
+}

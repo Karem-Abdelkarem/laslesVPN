@@ -8,6 +8,17 @@
   margin: 0 auto;
 }
 
+.main-btn {
+  text-decoration: none;
+  background-color: var.$main-color;
+  color: var.$color-white;
+  @include mixins.font($weight: 700);
+  padding: 1.75rem 7.75rem;
+  border-radius: 1rem;
+  line-height: 25px;
+  box-shadow: var.$box-shadow;
+}
+
 .secondary-btn {
   @include mixins.font($weight: 500);
   padding: 1.3rem 4.5rem;

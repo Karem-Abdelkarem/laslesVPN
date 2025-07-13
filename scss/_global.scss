@@ -26,3 +26,19 @@
   border: 1px solid var.$main-color;
   border-radius: 5rem;
 }
+
+.h2-heading {
+  @include mixins.flex($justify: flex-start, $gap: 2rem);
+  flex-direction: column;
+
+  .title {
+    @include mixins.font($weight: 500, $size: 3.5rem);
+    line-height: 50px;
+  }
+
+  .description {
+    @include mixins.font($weight: 400);
+    color: var.$color-gray;
+    line-height: 30px;
+  }
+}

@@ -1,0 +1,115 @@
+@use "variables" as var;
+@use "mixins";
+
+.customers-wrapper {
+  background-color: #fefefe;
+}
+
+.customers {
+  background-color: transparent;
+  @include mixins.flex;
+  flex-direction: column;
+  padding-bottom: 18rem;
+
+  &__heading {
+    max-width: 55.5rem;
+    text-align: center;
+  }
+
+  &__cards {
+    @include mixins.flex($justify: space-between, $gap: 5rem);
+    margin: 6rem 0 6rem auto;
+  }
+
+  &__card {
+    min-width: 40rem;
+    min-height: 23rem;
+    flex: 1;
+    border: 0.2rem solid var.$border-gray-color;
+    border-radius: 1rem;
+    padding: 3rem;
+
+    &:nth-of-type(1) {
+      border: 0.2rem solid var.$main-color;
+    }
+
+    &-head {
+      @include mixins.flex($justify: normal);
+      margin-bottom: 1rem;
+
+      img {
+        margin-right: 2rem;
+      }
+    }
+
+    &-name {
+      @include mixins.font($weight: 500, $size: 1.8rem);
+    }
+
+    &-location {
+      @include mixins.font($weight: 400, $size: 1.4rem);
+      color: var.$color-gray;
+    }
+
+    &-rating {
+      margin-left: auto;
+      display: flex;
+      gap: 1rem;
+
+      i {
+        color: #fea250;
+        margin-left: 1rem;
+      }
+    }
+
+    &-text {
+      @include mixins.font($weight: 400);
+      line-height: 3rem;
+    }
+  }
+
+  &__pagination {
+    width: 100%;
+    @include mixins.flex($justify: space-between);
+
+    &-dots {
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background-color: var.$pagination-color;
+      margin-right: 1.5rem;
+      cursor: pointer;
+
+      &:nth-of-type(1) {
+        background-color: var.$main-color;
+        width: 4.5rem;
+        border-radius: 5rem;
+      }
+    }
+
+    &-arrows-container {
+      @include mixins.flex($justify: space-between, $gap: 2rem);
+    }
+
+    &-arrows {
+      @include mixins.flex;
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+      border: 0.2rem solid var.$main-color;
+      cursor: pointer;
+
+      i {
+        color: var.$main-color;
+      }
+
+      &:nth-of-type(2) {
+        background-color: var.$main-color;
+        i {
+          color: var.$color-white;
+        }
+      }
+    }
+  }
+}

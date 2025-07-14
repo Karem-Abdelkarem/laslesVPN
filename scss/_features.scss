@@ -4,6 +4,7 @@
 .features {
   @include mixins.flex($justify: space-between, $gap: 16.95rem);
   margin-top: 9.5rem;
+  margin-bottom: 13.1rem;
 
   &__content {
     max-width: 42.8rem;

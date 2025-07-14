@@ -1,0 +1,88 @@
+@use "variables" as var;
+@use "mixins";
+
+.plans-wrapper {
+  background-color: var.$background-gray-color;
+}
+
+.plans {
+  padding: 8rem 0 15rem;
+  background-color: transparent;
+
+  &__cards {
+    @include mixins.flex($justify: space-between, $gap: 5rem);
+  }
+
+  &__card {
+    background-color: var.$color-white;
+    padding: 8rem 7rem 5rem;
+    @include mixins.flex($justify: space-between);
+    flex-direction: column;
+    height: 76rem;
+    border: 0.2rem solid var.$border-gray-color;
+    border-radius: 1rem;
+    margin-top: 6rem;
+
+    &:nth-of-type(3) {
+      border: 0.2rem solid var.$main-color;
+
+      .plans__card-btn {
+        color: var.$color-white;
+        background-color: var.$main-color;
+        box-shadow: var.$box-shadow;
+      }
+    }
+
+    &-content {
+      @include mixins.flex($justify: space-between, $gap: 3rem);
+      flex-direction: column;
+    }
+
+    &-image {
+      max-width: 14.5rem;
+      max-height: 16.5rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &-title {
+      @include mixins.font($weight: 500, $size: 1.8rem);
+      line-height: 3rem;
+    }
+
+    &-list {
+      @include mixins.flex($justify: space-between, $align: normal, $gap: 1rem);
+      flex-direction: column;
+      @include mixins.font($weight: 400, $size: 1.4rem);
+      line-height: 3rem;
+      color: var.$color-gray;
+
+      li i {
+        margin-right: 2rem;
+        color: var.$color-green;
+      }
+    }
+
+    &-buttons {
+      text-align: center;
+    }
+
+    &-label {
+      @include mixins.font($weight: 500, $size: 2.5rem);
+
+      span {
+        @include mixins.font($weight: 400, $size: 2.5rem);
+        color: var.$color-gray;
+      }
+    }
+
+    &-btn {
+      margin-top: 2rem;
+      border: 2px solid var.$main-color;
+      @include mixins.font($weight: 700);
+      padding: 1.3rem 6.3rem;
+    }
+  }
+}

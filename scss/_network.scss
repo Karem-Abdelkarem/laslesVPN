@@ -1,0 +1,30 @@
+@use "variables" as var;
+@use "mixins";
+
+.network-wrapper {
+  background-color: #fefefe;
+}
+
+.network {
+  background-color: transparent;
+  @include mixins.flex;
+  flex-direction: column;
+  padding-bottom: 5rem;
+
+  &__heading {
+    max-width: 55.5rem;
+    text-align: center;
+
+    .description {
+      .vpn {
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__images-content {
+    @include mixins.flex($justify: space-between, $gap: 3.5rem);
+    flex-direction: column;
+    margin-top: 15.5rem;
+  }
+}

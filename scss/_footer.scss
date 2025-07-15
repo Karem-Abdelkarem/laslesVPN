@@ -1,0 +1,106 @@
+@use "variables" as var;
+@use "mixins";
+
+.footer-wrapper {
+  background-color: var.$background-gray-color;
+  position: relative;
+
+  .subscribe {
+    background-color: var.$color-white;
+    @include mixins.flex($justify: space-between);
+    border-radius: 1rem;
+    box-shadow: var.$second-box-shadow;
+    padding: 5.9rem 7rem;
+    position: absolute;
+    width: 114rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &__text {
+      width: 36rem;
+    }
+
+    &__title {
+      @include mixins.font($weight: 500, $size: 3.5rem);
+      line-height: 4.5rem;
+      margin-bottom: 2rem;
+    }
+
+    &__description {
+      @include mixins.font($weight: 400);
+      color: var.$color-gray;
+    }
+  }
+
+  .footer {
+    background-color: transparent;
+    @include mixins.flex($justify: space-between, $gap: 23rem);
+    padding: 18rem 0 10rem;
+
+    &__info {
+      width: 34rem;
+
+      .logoContent {
+        width: fit-content;
+      }
+
+      &-description {
+        @include mixins.font($weight: 400);
+        line-height: 3rem;
+        color: var.$color-gray;
+        margin-top: 2rem;
+
+        span {
+          @include mixins.font($weight: 500);
+        }
+      }
+
+      &-icons {
+        @include mixins.flex($justify: space-between, $gap: 2rem);
+        width: fit-content;
+        margin: 3rem 0;
+      }
+
+      &-icon {
+        width: 3.4rem;
+        height: 3.4rem;
+        border-radius: 50%;
+        @include mixins.flex;
+        background-color: var.$color-white;
+        color: var.$main-color;
+        box-shadow: 0px 10px 29px 0px rgb(93 94 96 / 40%);
+        cursor: pointer;
+      }
+
+      &-copyrights {
+        color: var.$color-soft-gray;
+
+        span {
+          @include mixins.font($weight: 500);
+        }
+      }
+    }
+
+    &__links-container {
+      @include mixins.flex(
+        $justify: space-between,
+        $align: flex-start,
+        $gap: 12rem
+      );
+    }
+
+    &__links {
+      @include mixins.flex($justify: normal, $align: normal, $gap: 1rem);
+      flex-direction: column;
+      line-height: 3rem;
+      @include mixins.font($weight: 400);
+      color: var.$color-gray;
+
+      &-head {
+        @include mixins.font($weight: 500, $size: 1.8rem);
+        margin-bottom: 2rem;
+        color: var.$color-black;
+      }
+    }
+  }
+}

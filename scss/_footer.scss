@@ -12,7 +12,7 @@
     box-shadow: var.$second-box-shadow;
     padding: 5.9rem 7rem;
     position: absolute;
-    width: 114rem;
+    width: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -29,6 +29,10 @@
     &__description {
       @include mixins.font($weight: 400);
       color: var.$color-gray;
+    }
+
+    &__button {
+      padding: 1.75rem 6.5rem;
     }
   }
 

@@ -14,16 +14,24 @@
     @include mixins.font($weight: 400);
     color: var.$color-gray;
   }
+
+  &__btns {
+    a {
+      text-decoration: none;
+    }
+
+    .signin {
+      @include mixins.font($weight: 500);
+      color: var.$color-black;
+      margin-right: 3rem;
+    }
+  }
 }
 
-.headerBtns {
-  a {
-    text-decoration: none;
-  }
+.burger-menu {
+  display: none;
+}
 
-  .signin {
-    @include mixins.font($weight: 500);
-    color: var.$color-black;
-    margin-right: 3rem;
-  }
+.burger-menu-checkbox {
+  display: none;
 }

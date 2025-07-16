@@ -1,0 +1,294 @@
+@use "variables" as var;
+@use "mixins";
+
+@media (max-width: 769px) {
+  html {
+    font-size: 8px;
+  }
+  .container {
+    padding: 0 2rem;
+  }
+
+  .main-btn {
+    padding: 1rem 4.75rem;
+  }
+  header .burger-menu {
+    @include mixins.flex($justify: normal, $gap: 0.8rem);
+    flex-direction: column;
+    cursor: pointer;
+
+    .burger-bar {
+      background-color: var.$color-black;
+      width: 24px;
+      height: 2.4px;
+      transition: 0.3s;
+    }
+  }
+
+  .header {
+    position: relative;
+
+    &:has(.burger-menu-checkbox:checked) .burger-bar:nth-child(1) {
+      transform: translateY(8px) rotate(40deg);
+    }
+
+    &:has(.burger-menu-checkbox:checked) .burger-bar:nth-child(2) {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:has(.burger-menu-checkbox:checked) .burger-bar:nth-child(3) {
+      transform: translateY(-9px) rotate(-40deg);
+    }
+
+    &__nav {
+      display: block;
+      position: absolute;
+      left: 21rem;
+      bottom: 0;
+      z-index: -1;
+      background-color: var.$color-white;
+      transition: 0.3s;
+    }
+
+    &__btns {
+      display: block;
+      position: absolute;
+      right: 10px;
+      bottom: 0;
+      z-index: -1;
+      background-color: var.$color-white;
+      transition: 0.3s;
+
+      .signin {
+        margin-right: 1.5rem;
+      }
+      .signup {
+        padding: 1rem 4rem;
+      }
+    }
+
+    &:has(.burger-menu-checkbox:checked) &__btns {
+      bottom: -44px;
+    }
+
+    &:has(.burger-menu-checkbox:checked) &__nav {
+      bottom: -35px;
+    }
+  }
+
+  // hero
+  .hero {
+    margin-top: 6.85rem;
+    flex-wrap: wrap;
+
+    &__content {
+      min-width: 35rem;
+    }
+
+    &__title {
+      font-size: 4rem;
+      line-height: 5rem;
+
+      .vpn {
+        font-size: 4rem;
+      }
+    }
+
+    &__description {
+      line-height: 22px;
+    }
+
+    &__imageContent {
+      min-width: 350px;
+      text-align: center;
+    }
+
+    &__image {
+      width: 90%;
+    }
+  }
+  //   stats
+  .stats {
+    padding: 3.72rem 2.8rem;
+
+    &__item {
+      gap: 2rem;
+    }
+
+    &__number {
+      font-size: 2.2rem;
+    }
+
+    &__label {
+      font-size: 1.8rem;
+    }
+  }
+  //   plans
+  .plans {
+    padding: 5rem 2rem 12rem;
+
+    &__cards {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+  //   network
+  .network__images {
+    width: 90%;
+  }
+  //   customers
+  .customers {
+    padding: 0 2rem 18rem;
+
+    &__cards {
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    &__card {
+      max-width: 44rem;
+      height: 25rem;
+    }
+
+    &__pagination-arrows {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+  //   subscribe
+  .footer-wrapper .subscribe {
+    padding: 5.9rem 4rem;
+    width: 95%;
+  }
+
+  .footer-wrapper .footer {
+    gap: 15rem;
+    padding: 18rem 2rem 8rem;
+
+    &__links-container {
+      gap: 8rem;
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  html {
+    font-size: 6px;
+  }
+
+  .header {
+    .logoContent {
+      gap: 1.6rem;
+    }
+
+    &__logoImg {
+      width: 25px;
+    }
+
+    &__nav {
+      left: 10px;
+    }
+
+    &__links {
+      gap: 2rem;
+    }
+
+    &__btns {
+      right: 10px;
+    }
+
+    &:has(.burger-menu-checkbox:checked) &__btns {
+      bottom: -35px;
+    }
+
+    &:has(.burger-menu-checkbox:checked) &__nav {
+      bottom: -28.5px;
+    }
+
+    &:has(.burger-menu-checkbox:checked) .burger-bar:nth-child(1) {
+      transform: translateY(5px) rotate(40deg);
+    }
+  }
+
+  //   hero
+  .hero {
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 10rem;
+
+    &__content {
+      text-align: center;
+      min-width: 90%;
+    }
+
+    &__imageContent {
+      min-width: 90%;
+    }
+  }
+  //   stats
+  .stats {
+    padding: 1.72rem 2.8rem;
+    flex-wrap: wrap;
+
+    &__item:nth-last-of-type(2) {
+      padding-left: 4.3rem;
+      padding-right: 5.45rem;
+    }
+  }
+  //   features
+  .h2-heading {
+    text-align: center;
+
+    .title {
+      line-height: 30px;
+    }
+    .description {
+      line-height: 20px;
+    }
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 10rem;
+    margin-bottom: 10rem;
+
+    &__content {
+      order: -1;
+    }
+
+    &__functions {
+      margin-top: 4rem;
+    }
+
+    &__list {
+      font-size: 1.8rem;
+    }
+  }
+  //   plans
+  .plans__cards {
+    gap: 0;
+  }
+  //   subscribe
+  .footer-wrapper .subscribe {
+    padding: 3.5rem 2rem;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    &__title {
+      font-size: 2.5rem;
+      line-height: 4rem;
+    }
+
+    &__button {
+      padding: 1rem 4rem;
+    }
+  }
+  //   footer
+  .footer-wrapper .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10;
+  }
+}
